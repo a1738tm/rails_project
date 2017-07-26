@@ -1,0 +1,16 @@
+language: ruby
+rvm:
+- 2.2.5
+deploy:
+  provider: heroku
+  api_key:
+    secure: i+Xao8kC8cjxzNov8WDvVFP/Pr23Mc2u2AFBmZS5oR6FuXx1gvzvrR8c2NdJIfiI14kCxT2U/7aYasot1RbBGzHFyhomzao6ZCmGeHF+RUqJ44iuBIZY2sg18EVCuNcNmM5UxsNKMJplDvn5OyS2gqgy4pQZGZ21dLUZdiZ79jha7ofEF5xJCgv2EyMBzNUbPOBljCS4h+WuOfGn22c144e6VFnFKFBzvXc4jXWI7Svatz1tUb0WeWlRPtlv9EDWO3WN3bPXRlb5enVYUG0V8PRv0QHEK4MJAkgpjaz1/oUOKQk5NAiIROy0V8Uw5Qh0G+0jrCKA55/cwYJZWCxJZ79V/cZ+rvyMaAOCi5Ki2/AkevfaYMEfhRnu7bov/y9ZdpWNz8eZcvj2Kf/Uy+/aAOsAee50Z4DCZE1EhvhKfDjWUw6UXHh897iLF1hYj0S/xI9RbRWD/0appLIUqOkdwgGv422uyEtx0Uxlk/Bn5wwR3x4MyMlBftXu8VwIw3J+rwivUX9YYVhwHfvJqsYzBU5uFt8P90HTG0zS1ojfsbC3AK2ZzHBTk3SEIk8pLZab1A9VEgMnHVu6K94c3X8uDjJYi+BrE+j4I3MgrYZdioVlUthlEvHipQVWXBdt8ng1UqRtpbnsq/miXAiLUfe281joFVX4T72fMYoglI9GBe4=
+  app: boiling-basin-41652
+  on:
+    repo: a1738tm/rails_project
+addons:
+  postgresql: "9.4"
+before_script:
+  - psql -c 'create database travis_ci_test;' -U postgres
+  - cp config/database.yml.travis config/database.yml
+  - bundle exec rake db:migrate RAILS_ENV=test
