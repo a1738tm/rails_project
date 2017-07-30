@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <script> 
+   var request = 
+　　{ 
+　　QueryString : function(val) 
+　　{ 
+　　var uri = window.location.search; 
+　　var re = new RegExp("" +val+ "=([^&?]*)", "ig"); 
+　　return ((uri.match(re))?(uri.match(re)[0].substr(val.length+1)):null); 
+　　} 
+　　} 
+　　var name = request.QueryString("name"); 
+　　</script>
+  <title>List</title>
+</head>
+  <h1>チーム４</h1>
+  <h3>WELCOME!</h3>
+  <script>
+  document.writeln(name);
+  </script>
+    <h4>select game mode:</h4>
+    <table border="1">
+    <tr>
+      <td><a href="">中華料理</a></td>
+    </tr>
+    <tr>
+      <td><a href="">四字熟語</a></td>
+    </tr>
+    <tr>
+      <td><a href="">国旗</a></td>
+    </tr>
+    </table>
+    <br>
+      <a href="">チームマンバー</a>
+    <br><br>
+    <input type= "submit" name="back" value="  BACK  ">
+</html>

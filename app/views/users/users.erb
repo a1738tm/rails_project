@@ -1,0 +1,22 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <script> 
+　　function submit() 
+　　{
+　　var name = document.getElementById("username"); 
+　　window.open("list.html?name=" + name.value);
+　　} 
+　　</script> 
+  <title>Quiz</title>
+</head>
+<body>
+  <h1>チーム４</h1>
+  <h3>ユーザ登録</h3>
+  <h5>名前を入力してね！</h5>
+        <input type= "text" id="username"><br><br>
+        <input type= "submit" onclick="submit()" value="  START!  "><br>
+        <input type= "submit" name="rank" value="RANKING"><br>
+</body>
+</html>
+
