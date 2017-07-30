@@ -5,11 +5,11 @@ Rails.application.routes.draw do
 
   resources :users, :only => [:new, :create]
 
-  resources :quizzes, :only => [:new, :create]
+  resource :quiz, :only => [:show, :create]
 
-  resource :result, :only => [:show], :controller => :result
+  resource :result, :only => [:show]
 
-  resource :rankings, :only => [:show]
+  resource :ranking, :only => [:show]
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'

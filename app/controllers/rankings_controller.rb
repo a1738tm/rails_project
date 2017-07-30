@@ -1,6 +1,6 @@
 class RankingsController < ApplicationController
 
-  # GET /rankings/show
+  # GET /ranking/show
   def show
   end
 

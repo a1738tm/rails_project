@@ -1,7 +1,7 @@
 class QuizzesController < ApplicationController
 
-  # GET /quizzes/new
-  def new
+  # GET /quizzes/show
+  def show
   end
 
   # POST /quizzes/create
