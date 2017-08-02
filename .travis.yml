@@ -1,5 +1,5 @@
 language: ruby
-dist: trusty
+dist: precise
 rvm:
 - 2.2.5
 deploy:
