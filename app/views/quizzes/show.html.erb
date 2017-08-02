@@ -1,6 +1,6 @@
-  <h1></h1>
+  <h1><%= @username %></h1>
   <h3>問題１</h3>
-<%= form_tag('/users', :method => :post) do %>       
+<%= form_tag('/quiz', :method => :post) do %>       
         <label name="quiz" value="麻婆豆腐">麻婆豆腐</label>
         <br>
         <input type="radio" name="quiz" value="1">1<br>
