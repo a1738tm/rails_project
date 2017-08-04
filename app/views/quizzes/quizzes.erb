@@ -1,19 +1,14 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="utf-8">
-  <title>Quizzes</title>
-</head>
-  <h1>チーム４</h1>
-  <h3>問題１</h3>
+  <h1>Welcome <%=@username %> </h1>
+  <h3>問題<%=@username %></h3>
     <form method="post" action="/new">
-        <label name="quiz" value="麻婆豆腐">麻婆豆腐</label>
+        <label name="quiz" value=""><%=@username %></label>
         <br>
-        <input type="radio" name="1" value="1"><br>
-        <input type="radio" name="2" value="2"><br>
-        <input type="radio" name="3" value="3"><br>
-        <input type="radio" name="4" value="4"><br>
+        <input type="radio" name="quiz" value="1"><%=@username %><br>
+        <input type="radio" name="quiz" value="2"><%=@username %><br>
+        <input type="radio" name="quiz" value="3"><%=@username %><br>
+        <input type="radio" name="quiz" value="4"><%=@username %><br>
+	<input type="hidden" name="answer"><%=@username %><br>
         <input type= "submit" name="submit" value=" NEXT ">
+	<input type= "submin" name="appear" value=" 答え ">
     </form>
 
-</html>
