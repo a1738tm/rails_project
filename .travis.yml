@@ -9,6 +9,7 @@ deploy:
   app: boiling-basin-41652
   on:
     repo: a1738tm/rails_project
+  skip_cleanup: true
 addons:
   postgresql: "9.4"
 before_script:
