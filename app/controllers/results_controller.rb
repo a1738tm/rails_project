@@ -5,8 +5,14 @@ class ResultsController < ApplicationController
   # GET /result
   def show
     if !session[:save] then
-        session[:save] = true
-        # TODO データベースに登録する
+      # TODO 重複チェック
+      session[:save] = true
+      # データベースに登録する
+      Result.new do |r|
+        r.username = session[:username]
+        r.score = session[:score] * 10
+        r.save
+      end
     end
 
     @score = session[:score] * 10
