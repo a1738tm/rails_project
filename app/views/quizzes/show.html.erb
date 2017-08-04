@@ -1,11 +1,13 @@
-  <h1><%= @username %></h1>
-  <h3>問題１</h3>
-<%= form_tag('/quiz', :method => :post) do %>       
-        <label name="quiz" value="麻婆豆腐">麻婆豆腐</label>
+<h1>Welcome <%=@username %> </h1>
+ <h1>問題<%=@number %></h1>
+	<%= form_tag('/quiz', :method => :post) do %>       
+	<label name="quiz" value=""><%=@quiz[:question] %></label>
         <br>
-        <input type="radio" name="quiz" value="1">1<br>
-        <input type="radio" name="quiz" value="2">2<br>
-        <input type="radio" name="quiz" value="3">3<br>
-        <input type="radio" name="quiz" value="4">4<br>
-        <input type= "submit" name="submit" value="  NEXT  ">
+        <input type="radio" name="quiz" value="1"><%=@quiz[:options][0] %><br>
+        <input type="radio" name="quiz" value="2"><%=@quiz[:options][1] %><br>
+        <input type="radio" name="quiz" value="3"><%=@quiz[:options][2] %><br>
+        <input type="radio" name="quiz" value="4"><%=@quiz[:options][3] %><br>
+        <div hidden="hidden"><%=@quiz[:answer] %></div><br>
+        <input type= "submit" name="submit" value=" NEXT ">
+        <input type= "submit" name="appear" value=" 答え ">
 <% end %>
