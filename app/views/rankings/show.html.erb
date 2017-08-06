@@ -1,14 +1,16 @@
-  <h1>チーム４</h1>
-  <h3>RANKING:</h3>
-    <table border="1">
-    <tr>
-    <th>名前</th>
-    <th>成績</th>
-    </tr>
-    <tr>
-      <td></td>
-      <td></td>
-    </tr>
-    </table><br>
-    <input type= "submit" name="back" value="  BACK  ">
+<h1>Welcome <%=@username %></h1>
+<h3>RANKING:</h3>
+<table border="1">
+	<tr>
+	<th>名前</th>
+	<th>成績</th>
+	</tr>
+	<% @ranking.each do |ranking| %>
+	<tr>
+	<td><%=ranking[:username] %></td>
+	<td><%=ranking[:score] %></td>
+	</tr>
+	<% end %>
+	</table><br>
+<input type= "submit" name="back" value="  BACK  ">
 

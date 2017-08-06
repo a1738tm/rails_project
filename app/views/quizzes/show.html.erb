@@ -3,11 +3,28 @@
 	<%= form_tag('/quiz', :method => :post) do %>       
 	<label name="quiz" value=""><%=@quiz[:question] %></label>
         <br>
-        <input type="radio" name="quiz" value="1"><%=@quiz[:options][0] %><br>
-        <input type="radio" name="quiz" value="2"><%=@quiz[:options][1] %><br>
-        <input type="radio" name="quiz" value="3"><%=@quiz[:options][2] %><br>
-        <input type="radio" name="quiz" value="4"><%=@quiz[:options][3] %><br>
-        <div hidden="hidden"><%=@quiz[:answer] %></div><br>
-        <input type= "submit" name="submit" value=" NEXT ">
-        <input type= "submit" name="appear" value=" 答え ">
+        <input type="radio"  name="quiz" value="1"><%=@quiz[:options][0] %><br>
+        <input type="radio"  name="quiz" value="2"><%=@quiz[:options][1] %><br>
+        <input type="radio"  name="quiz" value="3"><%=@quiz[:options][2] %><br>
+        <input type="radio"  name="quiz" value="4"><%=@quiz[:options][3] %><br>
+        <input type="hidden" id="answer" value="<%=@quiz[:answer] %>"><br>
+        <input type= "submit" name="submit" onclick="answercheck()" value=" NEXT ">
+	<script>
+        function answercheck()
+        { 
+		var answer = document.getElementById("answer").value;
+        	var radios = document.getElementsByName('quiz');
+			for (var i = 0, length = radios.length; i < length; i++) {
+			if (radios[i].checked) {
+				var select = radios[i].value;
+				break;
+			}
+			}
+			if(answer == select){
+				alert("正解です！");
+			}　else {
+				alert("間違いました！正解は："+answer);
+			}
+        }
+	</script>
 <% end %>
