@@ -1,7 +1,7 @@
 (function ($) {
     'use strict';
 
-    $(document).on('click', 'form input[type="button"]', function () {
+    $(document).on('change', 'form input[type="radio"]', function () {
         var quiz = $('form input[type="radio"]:checked').val();
         var answer = $('#answer').val();
 

@@ -1,13 +1,12 @@
-<h1>Welcome <%=@username %> </h1>
- <h1>問題<%=@number %></h1>
-	<%= form_tag('/quiz', :method => :post) do %>       
-	<label name="quiz" value=""><%=@quiz[:question] %></label>
-        <br>
-        <input type="radio" name="quiz" value="1"><%=@quiz[:options][0] %><br>
-        <input type="radio" name="quiz" value="2"><%=@quiz[:options][1] %><br>
-        <input type="radio" name="quiz" value="3"><%=@quiz[:options][2] %><br>
-        <input type="radio" name="quiz" value="4"><%=@quiz[:options][3] %><br>
-        <div hidden="hidden"><%=@quiz[:answer] %></div><br>
-        <input type= "submit" name="submit" value=" NEXT ">
-        <input type= "submit" name="appear" value=" 答え ">
+<h1>Welcome <%= @username %></h1>
+<h1><%= @number %></h1>
+<p><%= @quiz[:question] %></p>
+<%= form_tag('/quiz', :method => :post) do %>
+  <input type="radio" name="quiz" value="1" id="option1"><label for="option1" class="option1"><%= @quiz[:options][0] %></label>
+  <input type="radio" name="quiz" value="2" id="option2"><label for="option2" class="option2"><%= @quiz[:options][1] %></label>
+  <input type="radio" name="quiz" value="3" id="option3"><label for="option3" class="option3"><%= @quiz[:options][2] %></label>
+  <input type="radio" name="quiz" value="4" id="option4"><label for="option4" class="option4"><%= @quiz[:options][3] %></label>
+  <input type="hidden" id="answer" value="<%= @quiz[:answer] %>">
+  <div class="judge incorrect"></div>
 <% end %>
+<script src="/assets/quiz.js"></script>

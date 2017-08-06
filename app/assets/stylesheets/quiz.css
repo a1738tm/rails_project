@@ -1,0 +1,86 @@
+/*csslint box-sizing: false */
+
+form {
+  margin: 0 auto;
+  position: relative;
+  width: 528px;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+input[type="radio"] + label {
+  border: 16px #ccc solid;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: block;
+  float: left;
+  height: 256px;
+  line-height: 224px;
+  text-align: center;
+  width: 256px;
+}
+.option1 {
+  border-radius: 32px 0 0 0;
+  margin: 0 8px 8px 0;
+}
+.option2 {
+  border-radius: 0 32px 0 0;
+  margin: 0 0 8px 8px;
+}
+.option3 {
+  border-radius: 0 0 0 32px;
+  margin: 8px 8px 0 0;
+}
+.option4 {
+  border-radius: 0 0 32px 0;
+  margin: 8px 0 0 8px;
+}
+input[type="radio"]:hover + label {
+  border: 16px #afa solid;
+}
+
+.judge {
+  box-sizing: border-box;
+  display: none;
+  height: 256px;
+  left: 0;
+  margin: 0 auto;
+  position: absolute;
+  right: 0;
+  top: 136px;
+  transform: rotate(45deg);
+  width: 256px;
+}
+
+.correct {
+  border: 32px #f55 solid;
+  border-radius: 128px;
+}
+
+.incorrect::before {
+  background-color: #55f;
+  content: "";
+  display: block;
+  height: 256px;
+  left: 0;
+  margin: 0 auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 32px;
+}
+.incorrect::after {
+  background-color: #55f;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 32px;
+  left: 0;
+  margin: auto 0;
+  position: absolute;
+  top: 0;
+  width: 256px;
+}
+
