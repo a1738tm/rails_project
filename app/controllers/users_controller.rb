@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-
   before_action :require_username, only: [:create]
 
   # GET /
@@ -9,11 +8,12 @@ class UsersController < ApplicationController
 
   # POST /users
   def create
+    quiz_count = 10
+
     # TODO 重複チェック
     session[:username] = params[:username]
 
-    # TODO ランダム生成
-    session[:quizzes] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    session[:quizzes] = Quiz.new.get_quizzes(quiz_count)
     session[:index] = 0
     session[:score] = 0
 
