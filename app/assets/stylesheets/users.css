@@ -1,0 +1,85 @@
+/*csslint box-sizing: false, outline-none: false */
+
+.users .title {
+  font-size: 48px;
+  line-height: 48px;
+  margin: 48px 0;
+  text-align: center;
+}
+
+.users .description {
+  font-size: 24px;
+  line-height: 24px;
+  margin: 0;
+  text-align: center;
+}
+
+.users form {
+  display: block;
+  margin: 32px auto;
+  max-width: 400px;
+  position: relative;
+}
+
+.users input[type="text"] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+  border: none;
+  border-bottom: 4px #333 dashed;
+  box-sizing: border-box;
+  display: block;
+  height: 32px;
+  margin: 0 auto;
+  outline: 0;
+  width: 192px;
+}
+
+.users input[type="submit"] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+  background-color: #3c3;
+  border: 15px #2b2 solid;
+  border-radius: 80px;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: block;
+  float: left;
+  font-size: 28px;
+  height: 160px;
+  line-height: 130px;
+  margin: 64px auto 0;
+  outline: 0;
+  text-align: center;
+  text-decoration: none;
+  width: 160px;
+}
+
+.users .button {
+  background-color: #33f;
+  border: 15px #22e solid;
+  border-radius: 80px;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: block;
+  float: right;
+  font-size: 24px;
+  height: 160px;
+  line-height: 130px;
+  margin: 64px auto 0;
+  text-align: center;
+  text-decoration: none;
+  width: 160px;
+}
+
+.users .error {
+  color: #f33;
+  font-size: 20px;
+  left: 0;
+  margin: 0 auto;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 32px;
+}

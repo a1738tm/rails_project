@@ -1,5 +1,6 @@
-<h1>Welcome <%=@username%></h1>
-<h3>あなたの成績：
-<div style="color:#F00"><%=@score%></div></h3><br>
-あなたは<%=@total%>人中<%=@rank%>位でした。<br><br>
-<a href="/ranking"> RANKING </a>
+<div class="result">
+  <h2 class="caption"><%=@username%>さんの成績</h2>
+  <p class="score"><span><%=@score%></span>点</p>
+  <p class="review">あなたは<%=@total%>人中<%=@rank%>位でした</p>
+  <a href="/ranking" class="button">RANKING</a>
+</div>
