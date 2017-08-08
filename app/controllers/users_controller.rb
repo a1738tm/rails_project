@@ -3,6 +3,10 @@ class UsersController < ApplicationController
 
   # GET /
   def new
+    @error = nil
+    if session[:error] then
+      @error = session[:error]
+    end
     reset_session
   end
 
@@ -10,9 +14,14 @@ class UsersController < ApplicationController
   def create
     quiz_count = 10
 
-    # TODO 重複チェック
-    session[:username] = params[:username]
+    # 重複チェック
+    if Result.new.exists(params[:username]) then
+      session[:error] = 'その名前は既に使われています'
+      redirect_to "/"
+      return
+    end
 
+    session[:username] = params[:username]
     session[:quizzes] = Quiz.new.get_quizzes(quiz_count)
     session[:index] = 0
     session[:score] = 0

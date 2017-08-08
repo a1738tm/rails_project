@@ -12,15 +12,11 @@ class QuizzesController < ApplicationController
     @quiz = Quiz.new.get_quiz(session[:quizzes][index])
     @number = index + 1
     @username = session[:username]
+    @timer = session[:timer] || 30
   end
 
   # POST /quiz
   def create
-    # 未回答の場合は却下
-    if params[:quiz].to_s.length == 0 then
-      redirect_to :action => "show" and return
-    end
-
     q = Quiz.new
 
     # 答え合わせ
@@ -31,9 +27,16 @@ class QuizzesController < ApplicationController
       session[:score] += 1
     end
 
+    # タイムオーバー
+    session[:timer] = params[:timer].to_i
+    @timer = session[:timer]
+    if @timer <= 0 then
+      index = session[:quizzes].length - 1
+    end
+
     index += 1
     session[:index] = index
-    if index >= session[:quizzes].length then
+    if index >= session[:quizzes].length || @timer <= 0 then
       redirect_to :controller => "results", :action => "show" and return
     end
 
