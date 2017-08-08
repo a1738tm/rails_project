@@ -1,19 +1,28 @@
 class UsersController < ApplicationController
-
   before_action :require_username, only: [:create]
 
   # GET /
   def new
+    @error = nil
+    if session[:error] then
+      @error = session[:error]
+    end
     reset_session
   end
 
   # POST /users
   def create
-    # TODO 重複チェック
-    session[:username] = params[:username]
+    quiz_count = 10
 
-    # TODO ランダム生成
-    session[:quizzes] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    # 重複チェック
+    if Result.new.exists(params[:username]) then
+      session[:error] = 'その名前は既に使われています'
+      redirect_to "/"
+      return
+    end
+
+    session[:username] = params[:username]
+    session[:quizzes] = Quiz.new.get_quizzes(quiz_count)
     session[:index] = 0
     session[:score] = 0
 

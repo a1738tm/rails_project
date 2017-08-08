@@ -1,0 +1,128 @@
+/*csslint box-sizing: false */
+
+.quiz {
+  margin: 0 auto;
+  width: 640px;
+}
+
+.quiz .number {
+  float: left;
+  font-size: 40px;
+  height: 100px;
+  line-height: 50px;
+  margin: 0;
+  text-align: center;
+  width: 136px;
+}
+
+.quiz .question {
+  float: left;
+  font-size: 24px;
+  height: 60px;
+  line-height: 30px;
+  margin: 40px 0 0;
+  width: 384px;
+}
+
+.quiz .timer {
+  box-sizing: border-box;
+  color: #33f;
+  float: right;
+  font-size: 80px;
+  font-weight: bold;
+  height: 120px;
+  line-height: 120px;
+  text-align: center;
+  width: 120px;
+}
+.quiz .pinch {
+  color: #f00;
+}
+
+.quiz form {
+  clear: both;
+  font-size: 20px;
+  margin: 0 auto;
+  position: relative;
+  width: 512px;
+}
+
+.quiz input[type="radio"] {
+  display: none;
+}
+
+.quiz input[type="radio"] + label {
+  border: 16px #ccc solid;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: block;
+  float: left;
+  font-size: 24px;
+  height: 248px;
+  line-height: 216px;
+  text-align: center;
+  width: 248px;
+}
+.quiz .option1 {
+  border-radius: 32px 0 0 0;
+  margin: 0 8px 8px 0;
+}
+.quiz .option2 {
+  border-radius: 0 32px 0 0;
+  margin: 0 0 8px 8px;
+}
+.quiz .option3 {
+  border-radius: 0 0 0 32px;
+  margin: 8px 8px 0 0;
+}
+.quiz .option4 {
+  border-radius: 0 0 32px 0;
+  margin: 8px 0 0 8px;
+}
+.quiz input[type="radio"]:hover + label {
+  border: 16px #afa solid;
+}
+
+.quiz .judge {
+  box-sizing: border-box;
+  cursor: pointer;
+  display: none;
+  height: 256px;
+  left: 0;
+  margin: 0 auto;
+  position: absolute;
+  right: 0;
+  top: 128px;
+  transform: rotate(45deg);
+  width: 256px;
+}
+
+.quiz .correct {
+  border: 32px #f55 solid;
+  border-radius: 128px;
+}
+
+.quiz .incorrect::before {
+  background-color: #55f;
+  content: "";
+  display: block;
+  height: 256px;
+  left: 0;
+  margin: 0 auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 32px;
+}
+.quiz .incorrect::after {
+  background-color: #55f;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 32px;
+  left: 0;
+  margin: auto 0;
+  position: absolute;
+  top: 0;
+  width: 256px;
+}

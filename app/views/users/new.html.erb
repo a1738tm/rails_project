@@ -1,8 +1,10 @@
-<h1></h1>
-<h3>ユーザ登録</h3>
-<h5>名前を入力してください！</h5>
-<%= form_tag('/users', :method => :post) do %>
-        <input type= "text" id="username" name="username"><br><br>
-        <input type= "submit" " value="  START!  "><br><br>
-	<a href="/ranking"> RANKING</a>
-<% end %>
+<div class="users">
+  <h1 class="title">早解きクイズ</h1>
+  <p class="description">挑戦者の名前を入力してください</p>
+  <%= form_tag('/users', :method => :post) do %>
+    <input type="text" id="username" name="username">
+    <p class="error"><%= @error %></p>
+    <input type="submit" value="START">
+    <a href="/ranking" class="button">RANKING</a>
+  <% end %>
+</div>

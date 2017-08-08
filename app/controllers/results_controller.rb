@@ -4,22 +4,17 @@ class ResultsController < ApplicationController
 
   # GET /result
   def show
-    if !session[:save] then
-      # TODO 重複チェック
-      session[:save] = true
-      # データベースに登録する
-      Result.new do |r|
-        r.username = session[:username]
-        r.score = session[:score] * 10
-        r.save
-      end
-    end
+    result = Result.new
 
     @score = session[:score] * 10
-    # TODO 全人数を取得する
-    @total = get_total
-    # TODO 順位を取得する
-    @rank = get_rank
+    @rank = result.get_rank(@score)
+
+    if !result.exists(session[:username]) then
+      # データベースに登録する
+      result.register(session[:username], session[:score] * 10)
+    end
+
+    @total = result.get_total
     @username = session[:username]
   end
 
@@ -29,14 +24,6 @@ class ResultsController < ApplicationController
     if session[:username].to_s.length == 0 then
       redirect_to "/"
     end
-  end
-
-  def get_total
-    return 10
-  end
-
-  def get_rank
-    return 3
   end
 
 end

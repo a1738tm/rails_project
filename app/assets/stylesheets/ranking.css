@@ -1,0 +1,66 @@
+/*csslint box-sizing: false */
+
+.ranking .caption {
+  color: #aa0;
+  font-size: 40px;
+  margin: 48px 0;
+  text-align: center;
+}
+
+.ranking table {
+  border-collapse: collapse;
+  box-sizing: border-box;
+  margin: 0 auto;
+  width: 384px;
+}
+
+.ranking th {
+  background-color: #900;
+  border: 1px #999 solid;
+  color: #fff;
+  font-weight: bold;
+  padding: 4px;
+}
+
+.ranking .you {
+  background-color: #faa;
+}
+
+.ranking .rank {
+  border: 1px #999 solid;
+  box-sizing: border-box;
+  padding: 4px;
+  text-align: center;
+  width: 64px;
+}
+
+.ranking .username {
+  border: 1px #999 solid;
+  padding: 4px;
+}
+
+.ranking .score {
+  border: 1px #999 solid;
+  box-sizing: border-box;
+  padding: 4px;
+  text-align: right;
+  width: 64px;
+}
+
+.ranking .button {
+  background-color: #33f;
+  border: 15px #22e solid;
+  border-radius: 80px;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: block;
+  font-size: 24px;
+  height: 160px;
+  line-height: 130px;
+  margin: 32px auto;
+  text-align: center;
+  text-decoration: none;
+  width: 160px;
+}
+
