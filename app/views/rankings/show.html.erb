@@ -1,16 +1,22 @@
-<h1>Welcome <%=@username %></h1>
-<h3>RANKING:</h3>
-<table border="1">
-	<tr>
-	<th>名前</th>
-	<th>成績</th>
-	</tr>
-	<% @ranking.each do |ranking| %>
-	<tr>
-	<td><%=ranking[:username] %></td>
-	<td><%=ranking[:score] %></td>
-	</tr>
-	<% end %>
-	</table><br>
-<input type= "submit" name="back" value="  BACK  ">
-
+<div class="ranking">
+  <h2 class="caption">RANKING</h2>
+  <table>
+    <tr>
+      <th>順位</th>
+      <th>名前</th>
+      <th>得点</th>
+    </tr>
+    <% @ranking.each do |ranking| %>
+    <% if @username && ranking[:username] == @username then %>
+    <tr class="you">
+    <% else %>
+    <tr>
+    <% end %>
+      <td class="rank"><%= ranking[:rank] %></td>
+      <td class="username"><%= ranking[:username] %></td>
+      <td class="score"><%= ranking[:score] %></td>
+    </tr>
+    <% end %>
+  </table>
+  <a href="/" class="button">BACK</a>
+</div>

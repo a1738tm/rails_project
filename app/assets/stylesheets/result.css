@@ -1,0 +1,41 @@
+/*csslint box-sizing: false */
+
+.result .caption {
+  font-size: 40px;
+  margin: 48px 0;
+  text-align: center;
+}
+
+.result .score {
+  font-size: 24px;
+  margin: 0;
+  text-align: center;
+}
+.result .score span {
+  color: #f00;
+  font-size: 64px;
+  font-weight: bold;
+}
+
+.result .review {
+  font-size: 20px;
+  margin: 16px 0;
+  text-align: center;
+}
+
+.result .button {
+  background-color: #33f;
+  border: 15px #22e solid;
+  border-radius: 80px;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: block;
+  font-size: 24px;
+  height: 160px;
+  line-height: 130px;
+  margin: 64px auto 0;
+  text-align: center;
+  text-decoration: none;
+  width: 160px;
+}

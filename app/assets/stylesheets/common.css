@@ -1,0 +1,26 @@
+/* csslint bulletproof-font-face: false */
+
+@font-face {
+  font-family: 'NotoSans';
+  src: url("NotoSans-Regular.ttf") format("truetype");
+}
+
+body {
+  color: #333;
+  font-family: 'NotoSans', sans-serif;
+  font-size: 16px;
+  margin: 0 auto;
+  max-width: 768px;
+  padding: 0;
+}
+
+input {
+  font-family: 'NotoSans', sans-serif;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+}
+
+.clearfix {
+  clear: both;
+}
